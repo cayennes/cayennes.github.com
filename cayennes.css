@@ -1,0 +1,71 @@
+body {
+	margin: 0;
+	margin-bottom: 20px;
+	background: #CCCC99;
+	font: 12pt/14pt trebuchet ms, geneva, luxi sans, arial, sans-serif;
+	color: #000033;
+}
+
+h1 {font: 16pt arial black, charcoal, sans-serif;}
+h2 {font: 14pt arial black, charcoal, sans-serif;}
+
+a:hover {
+	background: #FFFF33;
+	/* padding-top: 0.25ex;  */
+	/* padding-bottom: 0.2ex;*/
+}
+
+div.content {
+	margin-left: 1.5in; 
+	margin-right: 0.25in;
+	color: #330000;
+}
+
+div.logobar, div.rightbar, div.leftbar {
+	margin-top: 20px;
+	border: solid 4px #333366;
+	padding: 0.5ex;
+	vertical-align: middle;
+}
+
+div.logobar { 
+	font: 14pt arial black, charcoal, sans-serif;
+	background: #9999FF;
+	border-right: 0px;
+	margin-left: 20px;
+}
+
+div.logobar img {
+	vertical-align: middle;
+	margin: 1ex;
+	border: solid 4px #333366;
+}
+
+div.leftbar {
+	background: #CCCCCC;
+	border-left: 0px;
+	margin-right: 20px;
+	text-align: right;
+}
+
+div.leftbar img { vertical-align: middle }
+
+div.rightbar {
+	background: #999999;
+	border-right: 0px;
+	margin-left: 20px;
+}
+
+.pattern-text {
+	padding: 1.5em;
+	margin-left: 240px;
+	height: 240px;
+}
+
+img.pattern-img {
+	float: left
+}
+
+.center {
+	text-align: center
+}
