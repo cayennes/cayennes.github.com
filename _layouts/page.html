@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+<head>
+	<title>Cayenne's {{ page.title | capitalize}}</title>
+	<link rel="stylesheet"
+          type="text/css"
+          href="cayennes.css"
+          title="cayennes"/>
+</head>
+<body>
+<div class="logobar"><img
+src="yp.jpg" alt="[picture of crocheted yellow pig" />Cayenne's {{page.title | capitalize}}</div>
+</div>
+
+<div class="content">
+
+<h1>My {{ page.title | downcase}}</h1>
+
+{{ content }}
+
+</div>	
+
+<div class="rightbar">
+	I can be reached via email at <a 
+href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a>.
+</div>
+
+</body>
+</html>
