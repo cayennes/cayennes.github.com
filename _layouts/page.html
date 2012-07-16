@@ -4,7 +4,7 @@
     {% assign site_section = 'Miscellaneous' %}
 {% else %}
     {% capture site_section %}
-        {{ page.url | remove_first:'/' | split:'/' | first | capitalize}}
+        {{ page.url | remove_first:'/' | split:'/' | first | capitalize | remove:'/index.html'}}
     {% endcapture %}
 {% endif %}
 <html lang="en">
