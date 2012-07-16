@@ -1,8 +1,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% if page.url == '/index.html' %}
+    {% assign site_section = "Miscellaneous" %}
+{% else %}
+    {% capture site_section %}
+        {{ page.url | remove_first:'/' | split:'/' | first | capitalize}}
+    {% endcapture %}
+{% endif %}
 <html lang="en">
 <head>
-	<title>Cayenne's {{ page.title | capitalize}}</title>
+	<title>Cayenne's {{ site_section }}</title>
 	<link rel="stylesheet"
           type="text/css"
           href="/cayennes.css"
@@ -10,7 +17,7 @@
 </head>
 <body>
 <div class="logobar"><img
-src="/yp.jpg" alt="[picture of crocheted yellow pig" />Cayenne's {{page.title | capitalize}}</div>
+src="/yp.jpg" alt="[picture of crocheted yellow pig" />Cayenne's {{site_section }}</div>
 {{ page.linkbar }}
 
 <div class="content">
