@@ -20,7 +20,7 @@ opposite direction and it's just as easy as the knit stitch but with the
 way symmetry works it ends up oriented the other way.
 
 The disadvantage of combination knitting is that knitting instructions
-assume that all of your stitches are oriented so that the front leg is
+assume that all of your stitches are oriented so that the leading leg is
 always in front and that you always knit through the front leg.  Here
 are some of my explanations on how to deal with this difficulty.  I
 often assume that you have access to good instructions for knitting the
@@ -45,7 +45,7 @@ combination knitters is that sometimes the leading leg is the front leg
 and sometimes it's the back leg.  People who are used to knitting such
 that the leading leg is always the front leg just think of it as the
 front leg rather than the leading leg, and these are the people for whom
-the directions are written.  If youare a combination knitter and want to
+the directions are written.  If you are a combination knitter and want to
 be able to predict whether the leading leg will be in the front or the
 back, just figure out how the stitch was created; if it was created by
 knitting it will be in the front and if it was created with purling it
@@ -65,10 +65,10 @@ cases where you're not sure.  If you have directions that you really
 can't figure out how to convert to combination knitting, you have two
 options.  The first is knitting the standard way for just that part.
 The second is to re-orient all of the relevant stitches so that the
-leading leg is in front, and then follow the directions.  If you do this
-for a bit, you will see how it is supposed to work and it likely becomes
-more clear how to create the correct pattern without needing to
-re-orient as many stitches.
+leading leg is in front, and then follow the directions.  If you do
+either of these for a bit, you will see how it is supposed to work and
+it likely becomes more clear how to create the correct pattern without
+needing to re-orient as many stitches.
 
 ## Increases
 
