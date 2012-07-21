@@ -16,6 +16,9 @@ cyRavelryThing = {
         "use strict";
         var i, key,
             selectedProjects = this.projects.slice(0);
+        if (typeof filters === 'undefined') {
+            filters = {};
+        }
         for (i = selectedProjects.length - 1; i >= 0; i--) {
             for (key in filters) {
                 if (filters.hasOwnProperty(key)) {
@@ -36,31 +39,39 @@ cyRavelryThing = {
 (function ($) {
     "use strict";
     // Functions to turn projects into elements
-    function $makeProjectLinkImg(project) {
-        var $link = $('<a>', {href: project.url});
+    function $makeProjectImg(project) {
+        var $img;
         if (project.thumbnail) {
-            $link.append($('<img>', {
+            $img = $('<img>', {
                 src: project.thumbnail.src,
                 alt: project.name
-            }));
+            });
+            $img.data('project', project);
         }
+        return $img;
+    }
+
+    function $makeProjectLinkImg(project) {
+        var $link = $('<a>', {href: project.url});
+        $link.append($makeProjectImg(project));
         return $link;
     }
 
-    function $makeGallery(projects) {
+    function $makeGallery(projects, $makeProjectHtml) {
         var i, $gallery;
         $gallery = $('<div>', {'class': 'projects'});
         for (i = projects.length - 1; i >= 0; i--) {
-            $gallery.append($makeProjectLinkImg(projects[i]));
+            $gallery.append($makeProjectHtml(projects[i]));
         }
         return $gallery;
     }
 
     // Place the projects on the page
     $(document).ready(function () {
-        var $dataFilterDiv = $('div [data-filter]');
+        var $dataFilterDiv = $('div [data-filter]'),
+            $linkSpan = $('#generated-link');
         $dataFilterDiv.each(function () {
-            var filter, params, projects;
+            var filter, params, projects, $gallery;
             if ($(this).data('filter') === "url") {
                 filter = {};
                 jQuery.each(jQuery.url().param(), function (k, v) {
@@ -78,7 +89,21 @@ cyRavelryThing = {
                 filter = $(this).data('filter');
             }
             projects = cyRavelryThing.getProjects(filter);
-            $(this).replaceWith($makeGallery(projects));
+            if ($(this).data('mode') === 'creator') {
+                $gallery = $makeGallery(projects, $makeProjectImg);
+                $gallery.delegate('img', 'click', function () {
+                    var url, $link;
+                    $(this).toggleClass('selected');
+                    url = 'showcase.html?permalink=';
+                    $('div.projects img.selected').each(function () {
+                        url += $(this).data('project').permalink + '+';
+                    });
+                    $linkSpan.attr('href', url);
+                });
+            } else {
+                $gallery = $makeGallery(projects, $makeProjectLinkImg);
+            }
+            $(this).replaceWith($gallery);
         });
     });
 }(jQuery));

@@ -82,3 +82,7 @@ div.projects a:hover {
 div.projects a img:hover {
     border: 5px solid #FFFF33;
 }
+
+div.projects img.selected {
+    border: 5px solid #3333FF;
+}
