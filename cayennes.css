@@ -11,8 +11,6 @@ h2 {font: 14pt arial black, charcoal, sans-serif;}
 
 a:hover {
 	background: #FFFF33;
-	/* padding-top: 0.25ex;  */
-	/* padding-bottom: 0.2ex;*/
 }
 
 div.content {
@@ -83,8 +81,4 @@ div.projects a:hover {
 
 div.projects a img:hover {
     border: 5px solid #FFFF33;
-}
-
-.center {
-	text-align: center
 }
