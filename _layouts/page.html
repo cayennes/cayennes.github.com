@@ -21,17 +21,18 @@ src="/yp.jpg" alt="[picture of crocheted yellow pig" />Cayenne's {{ site_section
 {{ page.linkbar }}
 
 <div class="content">
-
 <h1>{{ page.title | capitalize}}</h1>
-
 {{ content }}
-
 </div>
 
 <div class="rightbar">
 	I can be reached via email at <a 
 href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a>.
 </div>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="/projects.js"></script>
+<script src="http://api.ravelry.com/projects/cayenne/progress.json?callback=RavelryThing.loadData&key=0e026ba07dcdee12ebfb6ff825069c2da4223a4e&version=0&status=in-progress+hibernating+finished+frogged"></script>
 
 </body>
 </html>

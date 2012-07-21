@@ -14,6 +14,9 @@ You need a ravelry account to view that page, but if you're at all
 interested in knitting or crocheting you probably already have one (or
 really should get one.)
 
+<div class="projects" id="happiest">If you have JavaScript enabled, some of my
+favorite projects that I've done will appear here in a moment.</div>
+
 ## Patterns
 
 Information about patterns for things I've designed can be found
