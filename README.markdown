@@ -33,6 +33,7 @@ space.
 It creates galleries of thumbnails that link to ravelry project pages
 based filters that pick things like happiness or specific
 projects, and can be used in either of two ways:
+
 1. The filter can be specified in JSON in an HTML data attribute for a
    static element of a page. I put this to use on my main yarncraft page
    to show off my happiest projects.
