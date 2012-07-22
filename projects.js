@@ -1,5 +1,5 @@
 /*jslint plusplus: true, maxlen: 72, browser: true */
-/*globals $ */
+/*globals jQuery */
 
 var cyRavelryThing;
 
@@ -42,7 +42,7 @@ cyRavelryThing = {
         for (i = selectedProjects.length - 1; i >= 0; i--) {
             for (key in filters) {
                 if (filters.hasOwnProperty(key)) {
-                    if ($.inArray(
+                    if (jQuery.inArray(
                             selectedProjects[i][key],
                             filters[key]
                         ) === -1) {
@@ -67,18 +67,21 @@ cyRavelryThing = {
     }
 };
 
-// Place the projects on the page
-$(document).ready(function () {
+(function ($) {
     "use strict";
-    var i, filter, projects,
-        $happiestProjectDiv = $('#happiest'),
-        $selectedProjectDiv = $('#selected');
-    if ($happiestProjectDiv.length) {
-        filter = {'happiness': [4]};
-        $happiestProjectDiv.html(cyRavelryThing.getGallery(filter));
-    }
-    if ($selectedProjectDiv.length) {
-        filter = {'permalink': $.url().param('projects').split('+')};
-        $selectedProjectDiv.html(cyRavelryThing.getGallery(filter));
-    }
-});
+    // Place the projects on the page
+    $(document).ready(function () {
+        var i, filter, projects,
+            $happiestProjectDiv = $('#happiest'),
+            $selectedProjectDiv = $('#selected');
+        if ($happiestProjectDiv.length) {
+            filter = {'happiness': [4]};
+            $happiestProjectDiv.html(cyRavelryThing.getGallery(filter));
+        }
+        if ($selectedProjectDiv.length) {
+            filter = {'permalink':
+                        $.url().param('projects').split('+')};
+            $selectedProjectDiv.html(cyRavelryThing.getGallery(filter));
+        }
+    });
+}(jQuery));
