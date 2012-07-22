@@ -5,5 +5,5 @@ linkbar: <div class="leftbar" id="menu0"><a href="index.html">Home</a> | <a href
 ---
 Each image is a link to the ravelry page with more details.
 
-<div class="projects" id="selected">If you have JavaScript
+<div data-filter="url">If you have JavaScript
 enabled, the projects will appear here in a moment.</div>

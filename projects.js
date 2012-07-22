@@ -47,10 +47,9 @@ cyRavelryThing = {
         return $link;
     }
 
-    function $makeGallery(filters) {
-        var i,
-            $gallery = $('<div>', {'class': 'projects'}),
-            projects = cyRavelryThing.getProjects(filters);
+    function $makeGallery(projects) {
+        var i, $gallery;
+        $gallery = $('<div>', {'class': 'projects'});
         for (i = projects.length - 1; i >= 0; i--) {
             $gallery.append($makeProjectLinkImg(projects[i]));
         }
@@ -59,17 +58,27 @@ cyRavelryThing = {
 
     // Place the projects on the page
     $(document).ready(function () {
-        var i, filter, projects,
-            $happiestProjectDiv = $('#happiest'),
-            $selectedProjectDiv = $('#selected');
-        if ($happiestProjectDiv.length) {
-            filter = {'happiness': [4]};
-            $happiestProjectDiv.replaceWith($makeGallery(filter));
-        }
-        if ($selectedProjectDiv.length) {
-            filter = {'permalink':
-                        $.url().param('projects').split('+')};
-            $selectedProjectDiv.replaceWith($makeGallery(filter));
-        }
+        var $dataFilterDiv = $('div [data-filter]');
+        $dataFilterDiv.each(function () {
+            var filter, params, projects;
+            if ($(this).data('filter') === "url") {
+                filter = {};
+                jQuery.each(jQuery.url().param(), function (k, v) {
+                    var values, i;
+                    values = v.split('+');
+                    for (i = values.length - 1; i >= 0; i--) {
+                        if (!isNaN(parseFloat(values[i]))) {
+                            values[i] = parseFloat(values[i]);
+                        }
+                    }
+                    filter[k] = values;
+                    
+                });
+            } else {
+                filter = $(this).data('filter');
+            }
+            projects = cyRavelryThing.getProjects(filter);
+            $(this).replaceWith($makeGallery(projects));
+        });
     });
 }(jQuery));
