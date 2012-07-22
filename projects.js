@@ -9,30 +9,7 @@ cyRavelryThing = {
 
     loadData: function (data) {
         "use strict";
-        var Project, i;
-        // Project class
-        Project = function (ravelryProject) {
-            var key;
-            for (key in ravelryProject) {
-                if (ravelryProject.hasOwnProperty(key)) {
-                    this[key] = ravelryProject[key];
-                }
-            }
-        };
-        Project.prototype.getLinkImgHtml = function () {
-            var html = '';
-            if (this.thumbnail) {
-                html = '<a href="' + this.url + '">' +
-                    '<img ' + 'src="' + this.thumbnail.src + '" ' +
-                    'alt="' + this.name + '" /></a>';
-            }
-            return html;
-        };
-
-        // Load the data
-        for (i = data.projects.length - 1; i >= 0; i--) {
-            this.projects[i] = new Project(data.projects[i]);
-        }
+        this.projects = data.projects;
     },
 
     getProjects: function (filters) {
@@ -53,22 +30,33 @@ cyRavelryThing = {
             }
         }
         return selectedProjects;
-    },
-
-    getGallery: function (filters) {
-        "use strict";
-        var i,
-            html = '',
-            projects = this.getProjects(filters);
-        for (i = projects.length - 1; i >= 0; i--) {
-            html += projects[i].getLinkImgHtml();
-        }
-        return html;
     }
 };
 
 (function ($) {
     "use strict";
+    // Functions to turn projects into elements
+    function $makeProjectLinkImg(project) {
+        var $link = $('<a>', {href: project.url});
+        if (project.thumbnail) {
+            $link.append($('<img>', {
+                src: project.thumbnail.src,
+                alt: project.name
+            }));
+        }
+        return $link;
+    }
+
+    function $makeGallery(filters) {
+        var i,
+            $gallery = $('<div>', {'class': 'projects'}),
+            projects = cyRavelryThing.getProjects(filters);
+        for (i = projects.length - 1; i >= 0; i--) {
+            $gallery.append($makeProjectLinkImg(projects[i]));
+        }
+        return $gallery;
+    }
+
     // Place the projects on the page
     $(document).ready(function () {
         var i, filter, projects,
@@ -76,12 +64,12 @@ cyRavelryThing = {
             $selectedProjectDiv = $('#selected');
         if ($happiestProjectDiv.length) {
             filter = {'happiness': [4]};
-            $happiestProjectDiv.html(cyRavelryThing.getGallery(filter));
+            $happiestProjectDiv.replaceWith($makeGallery(filter));
         }
         if ($selectedProjectDiv.length) {
             filter = {'permalink':
                         $.url().param('projects').split('+')};
-            $selectedProjectDiv.html(cyRavelryThing.getGallery(filter));
+            $selectedProjectDiv.replaceWith($makeGallery(filter));
         }
     });
 }(jQuery));
