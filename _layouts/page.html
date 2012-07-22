@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 {% if page.url == '/index.html' %}
     {% assign site_section = 'Miscellaneous' %}
 {% else %}
@@ -9,8 +8,9 @@
 {% endif %}
 <html lang="en">
 <head>
-	<title>Cayenne's {{ site_section }}</title>
-	<link rel="stylesheet"
+    <meta charset="UTF-8">
+    <title>Cayenne's {{ site_section }}</title>
+    <link rel="stylesheet"
           type="text/css"
           href="/cayennes.css"
           title="cayennes"/>
@@ -25,8 +25,7 @@ src="/yp.jpg" alt="[picture of crocheted yellow pig" />Cayenne's {{ site_section
 {{ content }}
 </div>
 
-<div class="rightbar">
-	I can be reached via email at <a 
+<div class="rightbar"> I can be reached via email at <a 
 href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a>.
 </div>
     
@@ -34,7 +33,7 @@ href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a>.
 <script>$.noConflict();</script>
 <script src="/jquery.url.js"></script>
 <script src="/projects.js"></script>
-<script src="http://api.ravelry.com/projects/cayenne/progress.json?callback=cyRavelryThing.loadData&key=0e026ba07dcdee12ebfb6ff825069c2da4223a4e&version=0&status=in-progress+hibernating+finished+frogged"></script>
+<script src="http://api.ravelry.com/projects/cayenne/progress.json?callback=cyRavelryThing.loadData&amp;key=0e026ba07dcdee12ebfb6ff825069c2da4223a4e&amp;version=0&amp;status=in-progress+hibernating+finished+frogged"></script>
 
 </body>
 </html>
