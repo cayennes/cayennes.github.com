@@ -1,15 +1,8 @@
 <!DOCTYPE html>
-{% if page.url == '/index.html' %}
-    {% assign site_section = 'Miscellaneous' %}
-{% else %}
-    {% capture site_section %}
-        {{ page.url | remove_first:'/' | split:'/' | first | capitalize | remove:'/index.html'}}
-    {% endcapture %}
-{% endif %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Cayenne's {{ site_section }}</title>
+    <title>Cayenne's {{ page.sitesection }}</title>
     <link rel="stylesheet"
           type="text/css"
           href="/cayennes.css"
@@ -17,7 +10,8 @@
 </head>
 <body>
 <div class="logobar"><img
-src="/yp.jpg" alt="[picture of crocheted yellow pig" />Cayenne's {{ site_section }}</div>
+src="/yp.jpg" alt="[picture of crocheted yellow pig" />Cayenne's 
+{{ page.sitesection }}</div>
 {{ page.linkbar }}
 
 <div class="content">

@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Project Showcase
+sitesection: Yarncraft
 linkbar: <div class="leftbar" id="menu0"><a href="index.html">Home</a> | <a href="patterns/index.html">Patterns</a> | <a href="combination.html">Combination Knitting</a></div>
 ---
 Each image is a link to the ravelry page with more details.

@@ -1,5 +1,6 @@
 ---
 layout: page
+sitesection: Yarncraft
 title: Project Showcase Creator
 linkbar: <div class="leftbar" id="menu0"><a href="index.html">Home</a> | <a href="patterns/index.html">Patterns</a> | <a href="combination.html">Combination Knitting</a></div>
 ---

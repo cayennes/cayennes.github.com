@@ -1,6 +1,7 @@
 ---
 layout: page
-title: miscellaneous
+sitesection: Miscellaneous
+title: Miscellaneous
 ---
 
 I have various things on various parts of the web; I'm collecting them
