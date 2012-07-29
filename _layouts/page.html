@@ -12,6 +12,11 @@
 <div class="logobar"><img
 src="/yp.jpg" alt="[picture of crocheted yellow pig" />Cayenne's 
 {{ page.sitesection }}</div>
+<div class="leftbar">
+    {% if page.url == '/index.html' %}<span>Home</span>{% else %}<a
+    href="/index.html">Home</a>{% endif %} |
+    {% if page.url == '/yarncraft/index.html' %}<span>Yarncraft</span>{% else %}<a href='/yarncraft/index.html'>Yarncraft</a>{% endif %}
+</div>
 {{ page.linkbar }}
 
 <div class="content">

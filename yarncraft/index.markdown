@@ -2,7 +2,7 @@
 layout: page
 title: Yarncraft
 sitesection: Yarncraft
-linkbar: <div class="leftbar" id="menu0"><span>Home</span> | <a href="patterns/index.html">Patterns</a> | <a href="combination.html">Combination Knitting</a></div>
+linkbar: <div class="leftbar"><a href="patterns/index.html">Patterns</a> | <a href="combination.html">Combination Knitting</a></div>
 ---
 I have craft things in a few places on the web.  Where to find it all:
 

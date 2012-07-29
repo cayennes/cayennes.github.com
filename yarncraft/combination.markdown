@@ -2,7 +2,7 @@
 layout: page
 title: Combination Knitting
 sitesection: Yarncraft
-linkbar: <div class="leftbar" id="menu0"><span><a href="index.html">Home</a></span> | <a href="patterns/index.html">Patterns</a> | Combination Knitting</div>
+linkbar: <div class="leftbar" id="menu0"><a href="patterns/index.html">Patterns</a> | Combination Knitting</div>
 ---
 I'm writing the page not because there aren't good existing pages on the
 web but be because they don't explain things the way I would, and
