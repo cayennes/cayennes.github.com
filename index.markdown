@@ -4,8 +4,7 @@ sitesection: Miscellaneous
 title: Miscellaneous
 ---
 
-I have various things on various parts of the web; I'm collecting them
-here.
+Here's where to find some of my stuff on the web:
 
 ## Yarn
 
@@ -16,9 +15,3 @@ site](yarncraft/index.html).
 
 All code I've written and shared can be found on my [GitHub
 page](https://github.com/cayennes).
-
-## Japanese
-
-I've contributed [some
-articles](http://japaneselevelup.com/author/cayenne/) to [Japanese Level
-Up](http://japaneselevelup.com).

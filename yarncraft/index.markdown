@@ -34,10 +34,3 @@ Information about patterns for things I've designed can be found
 
 I am a combination knitter and have written some things possibly useful
 for beginning combination knitters [here](combination.html)
-
-## For Sale
-
-I used to sell things on Etsy.  I don't keep
-[my shop](http://cayenne.etsy.com) stocked currently, but it's
-always possible that I'll start putting stuff up again and would
-probably be open to special orders.
